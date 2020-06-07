@@ -60,7 +60,7 @@ class Cone(Cylinder):
     self.color = color
     
   def vol_cone(self):
-    """The formula for estimating the volume of a Sphere is:
+    """The formula for estimating the volume of a Cone is:
      Vcone = 1/3 *math.pi*(self.radius**2)*(self.height)
     """
     vol_cal = math.pi*(self.radius**2)*(self.height)*1/3
