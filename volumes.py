@@ -9,7 +9,7 @@ class Cylinder:
   Args: The data will represent values for a given radius and height.
      The value of pi(3.14) will be a constant.
   """
-  def __init__(self, radius, height, unit_of_measurement="meters"):
+  def __init__(self, radius, height, unit_of_measurement="cubic meters"):
     self.radius = radius
     self.height = height
     self.unit_of_measurement = unit_of_measurement
@@ -19,10 +19,10 @@ class Cylinder:
      Vcyl = math.pi*(self.radius**2)*(self.height)
     """
     result = math.pi*(self.radius**2)*(self.height)
-    return ("The volume of the cylinder is: " + str(round(result, 2)))
+    return ("The volume of the cylinder is: " + str(round(result, 2)) + " " +  self.unit_of_measurement)
 
 
-class Sphere:
+class Sphere(Cylinder):
   """ Calculates the volume of a Sphere shape. The Sphere class
     shall have its own method for estimating the volume of a Sphere.
 
@@ -30,7 +30,8 @@ class Sphere:
      and unit of measurement(i.e. inches, feet, meters, ect).
      The value of pi(3.14) will be a constant.
   """
-  def __init__(self, radius):
+  def __init__(self, radius, height, unit_of_measurement="cubic meters"):
+    super().__init__(radius, height, unit_of_measurement=unit_of_measurement)
     self.radius = radius
     
   def vol_sphere(self):
@@ -38,7 +39,7 @@ class Sphere:
      Vsphr = 4/3 *math.pi*(self.radius**3)
     """
     vol_estimate = math.pi*(self.radius**3)*4/3
-    return ("The volume of the Sphere is: " + str(round(vol_estimate, 2)))
+    return ("The volume of the Sphere is: " + str(round(vol_estimate, 2)) + " " +  self.unit_of_measurement)
   
 
 class Cone(Cylinder):
@@ -50,7 +51,7 @@ class Cone(Cylinder):
      The value of pi(3.14) will be a constant.
   """
   def __init__(self, radius,  height, color):
-    Cylinder.__init__(self,radius, height, unit_of_measurement="meters" )
+    Cylinder.__init__(self,radius, height, unit_of_measurement="cubic meters" )
     self.color = color
     
   def vol_cone(self):
@@ -58,16 +59,16 @@ class Cone(Cylinder):
      Vcone = 1/3 *math.pi*(self.radius**2)*(self.height)
     """
     vol_cal = math.pi*(self.radius**2)*(self.height)*1/3
-    return ("The volume of the Cone is: " + str(round(vol_cal, 2)))
+    return ("The volume of the Cone is: " + str(round(vol_cal, 2)) + " " + self.unit_of_measurement )
 
 
 
 cylinder = Cylinder(10, 8)
 # print(cylinder.vol_cylinder())
 
-sphere = Sphere(5)
+sphere = Sphere(5, 1, "cubic meters")
 # print(sphere.vol_sphere())
-cone = Cone(6, 20, "meters")
+cone = Cone(6, 20, "cubic meters")
 print(cone.unit_of_measurement)
 print(cone.vol_cone())
 # print(sphere.unit_of_measurement)
