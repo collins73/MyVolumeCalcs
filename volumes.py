@@ -38,7 +38,7 @@ class Sphere:
      Vsphr = 4/3 *math.pi*(self.radius**3)
     """
     vol_estimate = math.pi*(self.radius**3)*4/3
-    return ("The volume of the cylinder is: " + str(round(vol_estimate, 2)))
+    return ("The volume of the Sphere is: " + str(round(vol_estimate, 2)))
   
 
 class Cone(Cylinder, Sphere):
@@ -58,7 +58,7 @@ class Cone(Cylinder, Sphere):
      Vcone = 1/3 *math.pi*(self.radius**2)*(self.height)
     """
     vol_cal = math.pi*(self.radius**2)*(self.height)*1/3
-    return ("The volume of the cylinder is: " + str(round(vol_cal, 2)))
+    return ("The volume of the Cone is: " + str(round(vol_cal, 2)))
 
 
 
