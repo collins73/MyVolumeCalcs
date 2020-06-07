@@ -7,7 +7,7 @@ class Cylinder:
   """Calculates the volume of a Cylinder shape
 
   Args: The data will represent values for a given radius and height.
-     The value of pi(3.14) will be a constant.
+     The value of pi(3.14) is a constant.
   """
   def __init__(self, radius, height, unit_of_measurement="cubic meters"):
     self.radius = radius
@@ -18,6 +18,10 @@ class Cylinder:
     """The formula for estimating the volume of a cylinder is:
      Vcyl = math.pi*(self.radius**2)*(self.height)
     """
+    if self.height > 0:#checks for,and reminds the user to select positive values for the height
+      print("Volumetric Calculations are fun!")
+    else:
+      print("Opps, please select a positive non-zero value")
     result = math.pi*(self.radius**2)*(self.height)
     return ("The volume of the cylinder is: " + str(round(result, 2)) + " " +  self.unit_of_measurement)
 
@@ -25,10 +29,11 @@ class Cylinder:
 class Sphere(Cylinder):
   """ Calculates the volume of a Sphere shape. The Sphere class
     shall have its own method for estimating the volume of a Sphere.
+    Sphere will inherit from Cylinder as shown.
 
   Args: The data will represent values for a given radius
      and unit of measurement(i.e. inches, feet, meters, ect).
-     The value of pi(3.14) will be a constant.
+     The value of pi(3.14) is a constant.
   """
   def __init__(self, radius, height, unit_of_measurement="cubic meters"):
     super().__init__(radius, height, unit_of_measurement=unit_of_measurement)
@@ -48,7 +53,7 @@ class Cone(Cylinder):
 
   Args: The data will represent values for a given radius, height,
      and unit of measurement(i.e. inches, feet, meters, ect).
-     The value of pi(3.14) will be a constant.
+     The value of pi(3.14) is a constant.
   """
   def __init__(self, radius,  height, color):
     Cylinder.__init__(self,radius, height, unit_of_measurement="cubic meters" )
@@ -63,10 +68,11 @@ class Cone(Cylinder):
   
 
 #Create instances/objects from each Class
-cylinder = Cylinder(10, 8, "cubic meters")
-print(cylinder.vol_cylinder())
+cylinder = Cylinder(-9, -8, "cubic meters")
+# print(cylinder.vol_cylinder())
 
-sphere = Sphere(5, 1, "cubic meters")
+sphere = Sphere(-6, "cubic meters")
 # print(sphere.vol_sphere())
-cone = Cone(6, 20, "cubic meters")
+cone = Cone(6, -20, "cubic meters")
+print(cone.vol_cylinder())# Method inheritance from the Cylinder class
 # print(cone.vol_cone())
