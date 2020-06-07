@@ -63,10 +63,10 @@ class Cone(Cylinder):
   
 
 #Create instances/objects from each Class
-cylinder = Cylinder(10, 8)
-# print(cylinder.vol_cylinder())
+cylinder = Cylinder(10, 8, "cubic meters")
+print(cylinder.vol_cylinder())
 
 sphere = Sphere(5, 1, "cubic meters")
-print(sphere.vol_sphere())
+# print(sphere.vol_sphere())
 cone = Cone(6, 20, "cubic meters")
 # print(cone.vol_cone())
