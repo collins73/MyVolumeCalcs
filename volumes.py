@@ -60,9 +60,9 @@ class Cone(Cylinder):
     """
     vol_cal = math.pi*(self.radius**2)*(self.height)*1/3
     return ("The volume of the Cone is: " + str(round(vol_cal, 2)) + " " + self.unit_of_measurement )
+  
 
-
-
+#Create instances/objects from each Class
 cylinder = Cylinder(10, 8)
 # print(cylinder.vol_cylinder())
 
