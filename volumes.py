@@ -41,7 +41,7 @@ class Sphere:
     return ("The volume of the Sphere is: " + str(round(vol_estimate, 2)))
   
 
-class Cone(Cylinder, Sphere):
+class Cone(Cylinder):
   """ Calculates the volume of a Cone shape. The Cone class
     shall inherit the properties and attributes from the Cylinder class.
 
@@ -49,9 +49,10 @@ class Cone(Cylinder, Sphere):
      and unit of measurement(i.e. inches, feet, meters, ect).
      The value of pi(3.14) will be a constant.
   """
-  def __init__(self, radius, height, color ):
-    Cylinder.__init__(self,radius, height)
+  def __init__(self, radius,  height, color, unit_of_measurement = "meters"):
+    Cylinder.__init__(self,radius, height )
     self.color = color
+    self.unit_of_measurement = unit_of_measurement
     
   def vol_cone(self):
     """The formula for estimating the volume of a Sphere is:
@@ -67,7 +68,7 @@ cylinder = Cylinder(10, 8)
 
 sphere = Sphere(5, "cubic meters")
 # print(sphere.vol_sphere())
-cone = Cone(6, 10, "Yellow")
-print(cone.color)
+cone = Cone(6, 20,"red", "meters")
+print(cone.unit_of_measurement)
 print(cone.vol_cone())
 # print(sphere.unit_of_measurement)
