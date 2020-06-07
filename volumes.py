@@ -9,9 +9,10 @@ class Cylinder:
   Args: The data will represent values for a given radius and height.
      The value of pi(3.14) will be a constant.
   """
-  def __init__(self, radius, height):
+  def __init__(self, radius, height, unit_of_measurement="meters"):
     self.radius = radius
     self.height = height
+    self.unit_of_measurement = unit_of_measurement
     
   def vol_cylinder(self):
     """The formula for estimating the volume of a cylinder is:
@@ -29,9 +30,8 @@ class Sphere:
      and unit of measurement(i.e. inches, feet, meters, ect).
      The value of pi(3.14) will be a constant.
   """
-  def __init__(self, radius, unit_of_measurement):
+  def __init__(self, radius):
     self.radius = radius
-    self.unit_of_measurement = unit_of_measurement
     
   def vol_sphere(self):
     """The formula for estimating the volume of a Sphere is:
@@ -49,10 +49,9 @@ class Cone(Cylinder):
      and unit of measurement(i.e. inches, feet, meters, ect).
      The value of pi(3.14) will be a constant.
   """
-  def __init__(self, radius,  height, color, unit_of_measurement = "meters"):
-    Cylinder.__init__(self,radius, height )
+  def __init__(self, radius,  height, color):
+    Cylinder.__init__(self,radius, height, unit_of_measurement="meters" )
     self.color = color
-    self.unit_of_measurement = unit_of_measurement
     
   def vol_cone(self):
     """The formula for estimating the volume of a Sphere is:
@@ -66,9 +65,9 @@ class Cone(Cylinder):
 cylinder = Cylinder(10, 8)
 # print(cylinder.vol_cylinder())
 
-sphere = Sphere(5, "cubic meters")
+sphere = Sphere(5)
 # print(sphere.vol_sphere())
-cone = Cone(6, 20,"red", "meters")
+cone = Cone(6, 20, "meters")
 print(cone.unit_of_measurement)
 print(cone.vol_cone())
 # print(sphere.unit_of_measurement)
