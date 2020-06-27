@@ -1,7 +1,6 @@
 import math
 import os
 
-
 os.system('cls')
 
 
