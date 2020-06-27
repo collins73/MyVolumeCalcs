@@ -4,5 +4,7 @@ coverage
 .bashrc
 .profile
 pipfile
+__pycache__
+
 
 
