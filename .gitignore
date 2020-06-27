@@ -1,3 +1,8 @@
 .vscode
 coverage
 .pytest_cache
+.bashrc
+.profile
+pipfile
+
+
