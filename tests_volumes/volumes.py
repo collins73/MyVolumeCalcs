@@ -90,7 +90,7 @@ cylinder = Cylinder(9, 7, "cubic meters")
 cylinder1 = Cylinder(8, 6, "cubic meters")
 cylinder1.unit_of_measurement = "cubic feet"
 # print(cylinder1.unit_of_measurement)
-# print(cylinder.vol_cylinder())
+print(cylinder.vol_cylinder())
 # cylinder.unit_of_measurement = "cubic feet"
 # print(cylinder.unit_of_measurement)
 
