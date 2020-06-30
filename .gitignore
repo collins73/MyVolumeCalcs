@@ -3,8 +3,14 @@ coverage
 .pytest_cache
 .bashrc
 .profile
-pipfile
+Pipfile
 __pycache__
+Pipfile.lock
+.idea
+
+
+
+
 
 
 
