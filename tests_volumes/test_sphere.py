@@ -1,6 +1,7 @@
 import os
 import pytest
 import volumes
+import math
 
 os.system('cls')
 
@@ -14,5 +15,7 @@ def tests_sphere():
 def tests_vol_sphere():
   sphere = volumes.Sphere(5, 3)
   assert sphere.radius == 5
+  vol_estimate = math.pi * (5 ** 3) * 4 / 3 ==  523.3
+  assert vol_estimate != int
 
 
