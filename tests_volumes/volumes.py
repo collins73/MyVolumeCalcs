@@ -34,7 +34,7 @@ class Cylinder:
         """The formula for estimating the volume of a cylinder is:
      Vcyl = math.pi*(self.radius**2)*(self.height)
     """
-        if self.height > 0:  # checks for,and reminds the user to select positive values for the height
+        if self.height > 0: 
             print("Volumetric Calculations are fun!")
         else:
             print("Opps, please select a positive non-zero value")
