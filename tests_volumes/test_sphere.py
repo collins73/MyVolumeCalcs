@@ -17,5 +17,3 @@ def tests_vol_sphere():
   assert sphere.radius == 5
   vol_estimate = math.pi * (5 ** 3) * 4 / 3 ==  523.3
   assert vol_estimate != int
-
-
