@@ -36,6 +36,7 @@ class Cylinder:
     """
         if self.height > 0: 
             print("Volumetric Calculations are fun!")
+
         else:
             print("Opps, please select a positive non-zero value")
         result = math.pi * (self.radius ** 2) * self.height
@@ -74,7 +75,7 @@ class Cone(Cylinder):
   """
 
     def __init__(self, radius, height, color):
-        Cylinder.__init__(self, radius, height, unit_of_measurement="cubic meters")
+        super().__init__(self, radius, height, unit_of_measurement="cubic meters")
         self.color = color
 
     def vol_cone(self):
@@ -103,4 +104,7 @@ print(cone1.unit_of_measurement)
 print(cone1.vol_cylinder())
 
 # print(cone.vol_cylinder())# Method inheritance from the Cylinder class
-# print(cone.vol_cone())
+# print(cone.vol_cone())  
+
+
+
