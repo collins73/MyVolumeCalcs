@@ -1,7 +1,5 @@
 import math
 import os
-
-
 os.system('cls')
 
 
@@ -74,8 +72,8 @@ class Cone(Cylinder):
      The value of pi(3.14) is a constant.
   """
 
-    def __init__(self, radius, height, color):
-        super().__init__(self, radius, height, unit_of_measurement="cubic meters")
+    def __init__(self, radius, height, color, unit_of_measurement="cubic meters"):
+        super().__init__(radius, height,  unit_of_measurement)
         self.color = color
 
     def vol_cone(self):
@@ -87,24 +85,31 @@ class Cone(Cylinder):
 
 
 # Create instances/objects from each Class
-cylinder = Cylinder(9, 7, "cubic meters")
-cylinder1 = Cylinder(8, 6, "cubic meters")
-cylinder1.unit_of_measurement = "cubic feet"
-# print(cylinder1.unit_of_measurement)
-print(cylinder.vol_cylinder())
-# cylinder.unit_of_measurement = "cubic feet"
+
+cylinder = Cylinder(6,10,"cubic feet")
+
+sphere = Sphere(5,2,"cubic meters")
+
+cone = Cone(3,8, "Yellow", "cubic centimeters")
+
+print(cone.unit_of_measurement)
+
+print(cone.vol_cone())
+
+
+
+print(sphere.vol_sphere())
+
+
 # print(cylinder.unit_of_measurement)
 
-sphere = Sphere(-6, "cubic meters")
-# print(sphere.vol_sphere())
-cone = Cone(6, -20, "cubic meters")
-cone1 = Cone(7, 10, "cubic feet")
-cone1.unit_of_measurement = "cubic inches"
-print(cone1.unit_of_measurement)
-print(cone1.vol_cylinder())
+# print(cylinder.height)
 
-# print(cone.vol_cylinder())# Method inheritance from the Cylinder class
-# print(cone.vol_cone())  
+print(cylinder.vol_cylinder())
+
+
+
+
 
 
 
