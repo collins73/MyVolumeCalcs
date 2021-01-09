@@ -1,10 +1,11 @@
 import math
 import os
+
 os.system('cls')
 
 
 ###########################################################################################
-This application calculates the volumes of these three shapes; Sphere, Cone, and Cylinder 
+# This application calculates the volumes of these three shapes; Sphere, Cone, and Cylinder
 ###########################################################################################
 
 
@@ -20,13 +21,11 @@ class Cylinder:
         self.height = height
         self._unit_of_measurement = unit_of_measurement
 
-    @property
-    def unit_of_measurement(self):
+    def get_unit_of_measurement(self):
         print("Running Getter")
         return self._unit_of_measurement
 
-    @unit_of_measurement.setter
-    def unit_of_measurement(self, new_measurement):
+    def set_unit_of_measurement(self, new_measurement):
         print("Running Setter")
         if new_measurement == "cubic inches" or "cubic feet" or "cubic millimeters":
             self._unit_of_measurement = new_measurement
@@ -37,7 +36,7 @@ class Cylinder:
         """The formula for estimating the volume of a cylinder is:
      Vcyl = math.pi*(self.radius**2)*(self.height)
     """
-        if self.height > 0: 
+        if self.height > 0:
             print("Volumetric Calculations are fun!")
 
         else:
@@ -78,7 +77,8 @@ class Cone(Cylinder):
   """
 
     def __init__(self, radius, height, color, unit_of_measurement="cubic meters"):
-        super().__init__(radius, height,  unit_of_measurement)
+        super().__init__(radius, height, unit_of_measurement)
+        self.unit_of_measurement = None
         self.color = color
 
     def vol_cone(self):
@@ -91,30 +91,20 @@ class Cone(Cylinder):
 
 # Create instances/objects from each Class
 
-cylinder = Cylinder(6,10,"cubic feet")
+cylinder = Cylinder(6, 10, "cubic feet")
 
-sphere = Sphere(5,2,"cubic meters")
+sphere = Sphere(5, 2, "cubic meters")
 
-cone = Cone(3,8, "Yellow", "cubic centimeters")
+cone = Cone(3, 8, "Yellow", "cubic centimeters")
 
-print(cone.unit_of_measurement)
+print(cone.get_unit_of_measurement)
 
 print(cone.vol_cone())
 
-
-
 print(sphere.vol_sphere())
-
 
 # print(cylinder.unit_of_measurement)
 
 # print(cylinder.height)
 
 print(cylinder.vol_cylinder())
-
-
-
-
-
-
-
